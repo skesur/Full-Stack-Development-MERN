@@ -1,0 +1,21 @@
+<!--When user clicks on 'Click me' button update a date whick is originally in json object is displyed in IST with H1 tag-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="a"></h1>
+    <button onclick="clickme()">Click me</button>
+
+    <script>
+        var d = {"dob" : "2006-10-07"};
+        var dob = new Date(d["dob"])
+        function clickme(){
+            document.getElementById("a").innerText = dob
+        }
+    </script>
+</body>
+</html>
