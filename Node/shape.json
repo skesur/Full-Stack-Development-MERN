@@ -1,0 +1,10 @@
+[
+    {
+        "name" : "circle",
+        "diameter" : 8
+    },
+    {
+        "name" : "square",
+        "side" : 10
+    }
+]
