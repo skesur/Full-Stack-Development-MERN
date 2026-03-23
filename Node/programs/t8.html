@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>t8</title>
+  </head>
+  <body>
+    <!--Create 1 para and 3 buttons 
+    1) inc button - increases font size of para by 1 px every 15 ms upto 200px
+    2) dec button - decreases font size of para by 1 px every 15 ms upto 20px
+    3) stops button - stops inc or dec
+    initially para has font size 18px and color red-->
+    <button id="but1" onclick="inc()">inc</button>
+    <button id="but2" onclick="dec()">dec</button>
+    <button id="but3" onclick="stops()">stops</button>
+    <p style="font-size: 18px;color:red" id="fs">
+      Lorem ipsum
+    </p>
+    <script>
+    let fs = document.querySelector("#fs")
+    let i = 18;
+    function inc(){
+        test = setInterval(()=>{
+            if (i<=200){
+                i=i+1;
+                fs.style.fontSize=`${i}px`;
+                fs.style.color=`rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)})`;
+            }
+        },50)
+    }
+    function dec(){
+        test = setInterval(()=>{
+            if (i>=20){
+                i=i-1;
+                fs.style.fontSize=`${i}px`;
+                fs.style.color=`rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)})`;
+            }
+        },50)
+    }
+    function stops(){
+        clearInterval(test)
+    }
+  </script>
+  </body>
+</html>

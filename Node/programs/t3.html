@@ -1,0 +1,20 @@
+<!--When user clicks on click me button a date which is originally in json object is displyed in ist with h1 tag-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 3</title>
+</head>
+<body>
+    <button onclick="clickMe()">Click Me</button>
+    <h1 id="time"></h1>
+    <script>
+        function clickMe(){
+            const date = {"dob":"2007-04-15"}
+            const dob = new Date(date.dob)
+            document.querySelector("#time").textContent=dob;
+        }
+    </script>
+</body>
+</html>
