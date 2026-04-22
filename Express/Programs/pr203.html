@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<body>
+    <form method="post" action="/cal" onsubmit="fun()">
+        No 1 : <input name="n1" type="number" id="n1"><br><br><br>
+        No 2 : <input type="number" name="n2" id="n2"><br><br><br>
+        <select name="op" id="op">
+            <option value="add">ADD</option>
+            <option value="sub">SUB</option>
+            <option value="mul">MUL</option>
+            <option value="div">DIV</option>
+        </select>    
+        <input type="submit" value="Calculate">
+    </form>
+
+    <script>
+        function fun(){
+            let n1 = document.getElementById("n1").value
+            let n2 = document.getElementById("n2").value
+            let op = document.getElementById("op").value
+            if ((n1<=0) || (n2<=0)){
+                alert("Please enter the valid number")
+            }
+            if (!op){
+                alert("You have not selected any formula")
+            }console.log(n1,n2,op)
+        }
+    </script>
+</body>
+</html>
