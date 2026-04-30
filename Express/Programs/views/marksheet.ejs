@@ -1,0 +1,29 @@
+<table rules="all" style="border: 10px; width: 100px; height: 200px;text-align: center;">
+    <tr>
+        <td>T1</th>
+        <td><%= `${T1}`%></td>
+    </tr>
+    <tr>
+        <td>T2</th>
+        <td><%= `${T2}`%></td>
+    </tr>
+    <tr>
+        <td>T3</th>
+        <td><%= `${T3}`%></td>
+    </tr>
+    <tr>
+        <td>T4</th>
+        <td><%= `${T4}`%></td>
+    </tr>
+    <tr>
+        <td>Total</th>
+        <td><%= `${Total}`%></td>
+    </tr>
+    <tr>
+            <% if(Total>45){%>
+                <td colspan="2" style="color: green; border: 1px solid black;">Pass</td>
+            <% }else{ %>
+                <td colspan="2" style="color: red; border: 1px solid black;">Fail</td>
+             <% } %>  
+    </tr>
+</table>
