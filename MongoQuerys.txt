@@ -1,0 +1,134 @@
+use mydb
+switched to db mydb
+db.Students.updateOne({rollno:"4"},{$pop : {subjects:-1}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.Students.updateOne({rollno:"4"},{$push : {subjects:'COA'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.Students.updateOne({rollno:"4"},{$pull : {subjects:'COA'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.Students.updateOne({rollno: 2}, {$mul : {marks: 2}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.Students.updateMany({},{$set : {batch:'A1'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 7,
+  modifiedCount: 7,
+  upsertedCount: 0
+}
+db.Students.updateMany({},{$rename : {name : "first_name"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 7,
+  modifiedCount: 7,
+  upsertedCount: 0
+}
+db.Students.updateMany({},{$rename : {first_name : "fname"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 7,
+  modifiedCount: 7,
+  upsertedCount: 0
+}
+db.Students.updateOne({rollno:"4"},{$push : {subjects:'COA'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.Students.updateMany({},{$set : {attendance : 1}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 7,
+  modifiedCount: 7,
+  upsertedCount: 0
+}
+db.Students.updateMany({},{$unset : {attendance : 1}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 7,
+  modifiedCount: 7,
+  upsertedCount: 0
+}
+db.Students.updateMany({},{$set : {attendance : 1}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 7,
+  modifiedCount: 7,
+  upsertedCount: 0
+}
+db.Students.updateMany({},{$unset : {attendance : 0}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 7,
+  modifiedCount: 7,
+  upsertedCount: 0
+}
+db.Students.updateMany({branch:'Aids'},{$unset : {fname : 0}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+db.Students.updateMany({branch:'AIDS'},{$unset : {fname : 0}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.Students.deleteOne()
+MongoshInvalidInputError: [COMMON-10001] Missing required argument at position 0 (Collection.deleteOne)
+db.Students.deleteOne({})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.Students.deleteOne({rollno: '9'})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.Students.deleteMany({})
+{
+  acknowledged: true,
+  deletedCount: 5
+}
+db.Students.drop()
+true
+db.dropDatabase()
